@@ -24,7 +24,7 @@ export class TaskFormComponent implements OnInit {
       this.taskService.save(this.task).subscribe(result => this.gotoTaskList());
     }
 
-    gotoUserList() {
+    gotoTaskList() {
       this.router.navigate(['/tasks']);
     }
 

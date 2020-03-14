@@ -1,6 +1,6 @@
 <div class="card my-5">
   <div class="card-body">
-    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" [(ngModel)]="task.title"
@@ -12,16 +12,16 @@
       </div>
       <div [hidden]="!title.pristine" class="alert alert-danger">Title is required</div>
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" [(ngModel)]="user.email"
+        <label for="description">Description</label>
+        <input type="text" [(ngModel)]="task.title"
                class="form-control"
-               id="email"
-               name="email"
-               placeholder="Enter your email address"
-               required #email="ngModel">
-        <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
+               id="description"
+               name="description"
+               placeholder="Enter the description"
+               required #title="ngModel">
       </div>
-      <button type="submit" [disabled]="!userForm.form.valid"
+      <div [hidden]="!description.pristine" class="alert alert-danger">Description is required</div>
+      <button type="submit" [disabled]="!titleForm.form.valid"
               class="btn btn-info">Submit</button>
     </form>
   </div>

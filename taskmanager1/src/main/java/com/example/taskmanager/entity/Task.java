@@ -12,8 +12,11 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private final String title;
-    private final String description;
+    private String title;
+    private String description;
+
+    public Task() {
+    }
 
     public Task(String title, String description) {
         this.title = title;
